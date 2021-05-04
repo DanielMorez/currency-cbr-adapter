@@ -3,8 +3,8 @@ spring:
     broker-url: tcp://localhost:61616
     user: admin
     password: admin
-  datasource:
-    url: jdbc:postgresql://localhost:5432/testdb
-    username: testuser
-    password: testuser
+  #datasource:
+  #  url: jdbc:postgresql://localhost:5432/testdb
+  #  username: testuser
+  #  password: testuser
 

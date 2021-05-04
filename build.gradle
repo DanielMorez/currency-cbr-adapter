@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id 'org.flywaydb.flyway' version '7.8.1'
+	//id 'org.flywaydb.flyway' version '7.8.1'
 	id 'no.nils.wsdl2java' version '0.10'
 }
 
@@ -15,14 +15,14 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'ma.glasnost.orika:orika-core:1.4.6'
-	implementation('io.springfox:springfox-swagger2:2.9.2')
-	implementation('io.springfox:springfox-swagger-ui:2.9.2')
+	//implementation('io.springfox:springfox-swagger2:2.9.2')
+	//implementation('io.springfox:springfox-swagger-ui:2.9.2')
 	implementation 'junit:junit:4.13.1'
 
-	runtimeOnly 'org.postgresql:postgresql'
+	//runtimeOnly 'org.postgresql:postgresql'
 	compileOnly 'org.projectlombok:lombok:1.18.8'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 
@@ -36,12 +36,12 @@ dependencies {
 	}
 }
 
-flyway {
+/*flyway {
 	url = 'jdbc:postgresql://localhost:5432/testdb'
 	user = 'testuser'
 	password = 'testuser'
 	schemas = ['public']
-}
+}*/
 
 test {
 	useJUnitPlatform()

@@ -32,8 +32,8 @@ import javax.xml.namespace.QName;
  *   &lt;complexContent&gt;
  *     &lt;extension base="{http://www.w3.org/2001/XMLSchema}annotated"&gt;
  *       &lt;group ref="{http://www.w3.org/2001/XMLSchema}particle" maxOccurs="unbounded" minOccurs="0"/&gt;
- *       &lt;attGroup ref="{http://www.w3.org/2001/XMLSchema}occurs"/&gt;
  *       &lt;attGroup ref="{http://www.w3.org/2001/XMLSchema}defRef"/&gt;
+ *       &lt;attGroup ref="{http://www.w3.org/2001/XMLSchema}occurs"/&gt;
  *       &lt;anyAttribute processContents='lax' namespace='##other'/&gt;
  *     &lt;/extension&gt;
  *   &lt;/complexContent&gt;
@@ -63,18 +63,18 @@ public abstract class Group
         @XmlElementRef(name = "any", namespace = "http://www.w3.org/2001/XMLSchema", type = Any.class, required = false)
     })
     protected List<Object> particle;
-    @XmlAttribute(name = "minOccurs")
-    @XmlSchemaType(name = "nonNegativeInteger")
-    protected BigInteger minOccurs;
-    @XmlAttribute(name = "maxOccurs")
-    @XmlSchemaType(name = "allNNI")
-    protected String maxOccurs;
     @XmlAttribute(name = "name")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
     protected String name;
     @XmlAttribute(name = "ref")
     protected QName ref;
+    @XmlAttribute(name = "minOccurs")
+    @XmlSchemaType(name = "nonNegativeInteger")
+    protected BigInteger minOccurs;
+    @XmlAttribute(name = "maxOccurs")
+    @XmlSchemaType(name = "allNNI")
+    protected String maxOccurs;
 
     /**
      * Gets the value of the particle property.
@@ -108,6 +108,54 @@ public abstract class Group
             particle = new ArrayList<Object>();
         }
         return this.particle;
+    }
+
+    /**
+     * Gets the value of the name property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the value of the name property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    /**
+     * Gets the value of the ref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link QName }
+     *     
+     */
+    public QName getRef() {
+        return ref;
+    }
+
+    /**
+     * Sets the value of the ref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link QName }
+     *     
+     */
+    public void setRef(QName value) {
+        this.ref = value;
     }
 
     /**
@@ -164,54 +212,6 @@ public abstract class Group
      */
     public void setMaxOccurs(String value) {
         this.maxOccurs = value;
-    }
-
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Gets the value of the ref property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link QName }
-     *     
-     */
-    public QName getRef() {
-        return ref;
-    }
-
-    /**
-     * Sets the value of the ref property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link QName }
-     *     
-     */
-    public void setRef(QName value) {
-        this.ref = value;
     }
 
 }
