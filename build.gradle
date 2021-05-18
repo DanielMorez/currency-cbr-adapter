@@ -6,6 +6,9 @@ plugins {
 	id 'no.nils.wsdl2java' version '0.10'
 }
 
+
+
+
 group = 'ru.ds.educations.exercise'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
